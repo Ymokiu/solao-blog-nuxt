@@ -1,0 +1,69 @@
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none !important;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+@media screen and (min-width: 1200px) {}
+
+@media screen and (max-width: 992px) {
+  .main-inner>.aside-wrap {
+    display: none;
+  }
+
+  .header-top>.brand-wrapper {
+    height: 260px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main-inner>.content {
+    width: 100%;
+  }
+
+  .section-hero {
+    height: 100vh;
+    min-height: 500px;
+  }
+}
+
+@media screen and (max-width: 600px) {}
+
+@media screen and (min-width: 600px) {}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  line-height: 1.5;
+  font-family: "PingFang SC", "Lato",
+    "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 15px 0 25px;
+}
+
+h1 {
+  font-size: 22px;
+}
+
+h2 {
+  font-size: 20px;
+}
