@@ -1,6 +1,9 @@
 <template>
   <main class="main-inner">
     <div class="content-wrap">
+      <p v-for="i in idPages" :key="i.meta">
+        {{ i.meta }}
+      </p>
       <section class="archive-wrap">
         <PostPreview
           v-for="post in postsPage"
@@ -25,13 +28,15 @@ export default {
   async asyncData() {
     const resolve = await require.context("~/content/archive", true, /\.md$/);
     let imports = resolve.keys().map((key) => resolve(key));
+
+    // console.log(imports)
     // sort by year
     imports.sort((a, b) =>
       moment(b.attributes.year, "YYYY/MM/DD,H").diff(
         moment(a.attributes.year, "YYYY/MM/DD,H")
       )
     );
-    // console.log(imports);
+
     return {
       posts: imports.map((imports) => {
         return {
@@ -41,6 +46,7 @@ export default {
           description: imports.attributes.description,
           html: imports.attributes.html,
           url: imports.vue.render.FunctionLocation,
+          meta: imports.meta.resourcePath,
         };
       }),
     };
@@ -60,6 +66,25 @@ export default {
     },
     maxPages() {
       return Math.ceil(this.posts.length / 7);
+    },
+    idPages() {
+      this.posts.forEach((item) => {
+        let str = item.meta.resourcePath;
+        item.meta.resourcePath = str.match(
+          /[A-Za-z0-9][-A-Za-z0-9]+\.[md]{2,2}/g
+          // /[A-Za-z0-9][-A-Za-z0-9]+\.[md]{2,2}/g
+        );
+      });
+      return str;
+      // let tempArr = [];
+      // for(let i in data){
+      //   return tempArr.push({archive: [tempArr[i]]})
+      // }
+      // let attr = [];
+      // for (let i in data) {
+      //   var pattern = /\.{1}[md]{1,}/;
+      //   return attr.push(data.meta[i].slice(0, pattern.exec(data.meta[i]).index));
+      // }
     },
   },
   methods: {

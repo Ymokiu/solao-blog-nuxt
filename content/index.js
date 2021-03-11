@@ -4,7 +4,7 @@ const fs = require('fs')
 const files = fs.readdirSync('archive').filter(function (file) {
   return path.extname(file).toLowerCase() === '.md';
 });
-
+console.log(files)
 let attr = [];
 for (let i in files) {
   var pattern = /\.{1}[md]{1,}/;

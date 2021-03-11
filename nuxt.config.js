@@ -42,7 +42,6 @@ function getPaths(type) {
 
 
 export default {
-  mode: 'universal',
   server: {
     host: '0.0.0.0',
     port: 3333
@@ -50,7 +49,7 @@ export default {
   head: {
     title: process.env.npm_package_name || '',
     htmlAttrs: {
-      lang: 'zh-Hans'
+      lang: 'zh-cmn-Hans'
     },
     meta: [{
         charset: 'utf-8'
@@ -178,7 +177,7 @@ export default {
         loader: "frontmatter-markdown-loader",
         include: path.resolve(__dirname, "content"),
         options: {
-          mode: [Mode.VUE_RENDER_FUNCTIONS, Mode.VUE_COMPONENT],
+          mode: [Mode.VUE_RENDER_FUNCTIONS, Mode.VUE_COMPONENT, Mode.META],
           vue: {
             root: "dynamicMarkdown",
           },

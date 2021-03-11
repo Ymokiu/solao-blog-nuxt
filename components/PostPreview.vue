@@ -41,6 +41,9 @@ export default {
       type: String,
       required: true
     },
+    meta: {
+      type: Array
+    },
     description: {
       type: String
     },
