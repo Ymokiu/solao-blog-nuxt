@@ -22,7 +22,10 @@
 
 <script>
 import moment from "moment";
+import dayjs from "dayjs";
 import PostPreview from "@/components/PostPreview";
+var minMax = require("dayjs/plugin/minMax");
+dayjs.extend(minMax);
 
 export default {
   async asyncData() {
@@ -31,12 +34,15 @@ export default {
 
     // console.log(imports)
     // sort by year
-    imports.sort((a, b) =>
-      moment(b.attributes.year, "YYYY/MM/DD,H").diff(
-        moment(a.attributes.year, "YYYY/MM/DD,H")
-      )
-    );
-
+    // imports.sort((a, b) =>
+    //   moment(b.attributes.year, "YYYY/MM/DD,H").diff(
+    //     moment(a.attributes.year, "YYYY/MM/DD,H")
+    //   )
+    // );
+    imports.forEach((item) => {
+      item.attributes.year = dayjs(item.attributes.year).format("DD/MM/YYYY");
+    });
+    console.log(imports);
     return {
       posts: imports.map((imports) => {
         return {
@@ -68,14 +74,12 @@ export default {
       return Math.ceil(this.posts.length / 7);
     },
     idPages() {
-      this.posts.forEach((item) => {
-        let str = item.meta.resourcePath;
-        item.meta.resourcePath = str.match(
-          /[A-Za-z0-9][-A-Za-z0-9]+\.[md]{2,2}/g
-          // /[A-Za-z0-9][-A-Za-z0-9]+\.[md]{2,2}/g
-        );
-      });
-      return str;
+      // let str = this.posts;
+      // str = match(
+      //   /[A-Za-z0-9][-A-Za-z0-9]+\.[md]{2,2}/g
+      //   // /[A-Za-z0-9][-A-Za-z0-9]+\.[md]{2,2}/g
+      // );
+      // return str;
       // let tempArr = [];
       // for(let i in data){
       //   return tempArr.push({archive: [tempArr[i]]})

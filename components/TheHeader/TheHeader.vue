@@ -3,30 +3,22 @@
     <headroom class="main-nav">
       <nav>
         <ul class="nav-links">
-          <nuxt-link to="/" tag="li" class="nav-link" >
+          <nuxt-link to="/" tag="li" class="nav-link">
             <a hrel="section">
               <i class="fa fa-home fa-fw" aria-hidden="true"></i>首页
             </a>
           </nuxt-link>
           <nuxt-link to="/archive" tag="li" class="nav-link">
-            <a>
-              <i class="fa fa-book fa-fw" aria-hidden="true"></i>归档
-            </a>
+            <a> <i class="fa fa-book fa-fw" aria-hidden="true"></i>归档 </a>
           </nuxt-link>
           <nuxt-link to="/" tag="li" class="nav-link">
-            <a>
-              <i class="fa fa-coffee fa-fw" aria-hidden="true"></i>日常
-            </a>
+            <a> <i class="fa fa-coffee fa-fw" aria-hidden="true"></i>日常 </a>
           </nuxt-link>
           <nuxt-link to="/tags" tag="li" class="nav-link">
-            <a>
-              <i class="fa fa-camera fa-fw" aria-hidden="true"></i>标签
-            </a>
+            <a> <i class="fa fa-camera fa-fw" aria-hidden="true"></i>标签 </a>
           </nuxt-link>
           <nuxt-link to="/friend" tag="li" class="nav-link">
-            <a>
-              <i class="fa fa-mars fa-fw" aria-hidden="true"></i>小伙伴
-            </a>
+            <a> <i class="fa fa-mars fa-fw" aria-hidden="true"></i>小伙伴 </a>
           </nuxt-link>
           <nuxt-link to="/about" tag="li" class="nav-link">
             <a>
@@ -45,13 +37,18 @@ import { headroom } from "vue-headroom";
 export default {
   data() {
     return {
-      headerimg: require("assets/images/header-leg.jpg?size=1920")
+      headerimg: "https://i.loli.net/2021/04/06/FG9RqbPOmIeUhwv.jpg?size=1920",
     };
   },
   head() {
     return {
-      link: [{rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css'}]
-    }
+      link: [
+        {
+          rel: "stylesheet",
+          href: "https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css",
+        },
+      ],
+    };
   },
   components: { headroom },
 };

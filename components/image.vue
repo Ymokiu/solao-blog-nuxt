@@ -19,38 +19,38 @@
 export default {
   props: {
     imageUrl: {
-      type: String
+      type: String,
     },
     alt: {
-      type: String
+      type: String,
     },
     width: {
-      type: String
+      type: String,
     },
     height: {
-      type: String
+      type: String,
     },
     classes: {
-      type: String
+      type: String,
     },
     rounded: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   methods: {
-    imageRequired () {
-      return require(`../assets/images/${this.imageURL}`)
+    imageRequired() {
+      return require(`../assets/images/${this.imageURL}`);
     },
-    moveErrorImg: function(event) {
+    moveErrorImg: function (event) {
       event.currentTarget.src = require("../assets/images/image-404.png?size=640");
-    }
+    },
   },
   computed: {
     isRounded() {
-      return this.rounded ? 'image-placeholder--rounded' : '';
-    }
-  }
+      return this.rounded ? "image-placeholder--rounded" : "";
+    },
+  },
 };
 </script>
 

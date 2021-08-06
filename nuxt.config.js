@@ -46,16 +46,21 @@ export default {
     host: '0.0.0.0',
     port: 3333
   },
+  pwa: {
+    manifest: {
+      lang: 'zh-CN'
+    }
+  },
   head: {
-    title: process.env.npm_package_name || '',
     htmlAttrs: {
-      lang: 'zh-cmn-Hans'
+      lang: 'zh-CN'
     },
+    title: process.env.npm_package_name || '',
     meta: [{
         charset: 'utf-8'
       },
       {
-        'http-equiv': 'cleartype',
+        'http-equiv': 'clear-type',
         content: 'on'
       },
       {
@@ -78,7 +83,7 @@ export default {
       },
       {
         rel: 'dns-prefetch',
-        href: '//api.solaokiu.moe'
+        href: 'https://api.solaokiu.moe'
       }
     ]
   },
