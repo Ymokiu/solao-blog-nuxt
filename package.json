@@ -28,7 +28,7 @@
     "@nuxtjs/google-analytics": "^2.4.0",
     "babel-plugin-component": "^1.1.1",
     "frontmatter-markdown-loader": "^3.6.3",
-    "markdown-it": "^12.1.0",
+    "markdown-it": "^12.3.2",
     "markdown-it-anchor": "^8.1.0",
     "markdown-it-external-links": "^0.0.6",
     "markdown-it-imsize": "^2.0.1",
