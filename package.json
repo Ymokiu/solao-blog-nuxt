@@ -36,7 +36,7 @@
     "markdown-it-prism": "^2.1.8",
     "markdown-it-task-checkbox": "^1.0.6",
     "markdown-it-toc-done-right": "^4.2.0",
-    "node-sass": "^6.0.1",
+    "node-sass": "^7.0.0",
     "nuxt-moment-jalaali": "^1.6.2",
     "nuxt-purgecss": "^1.0.0",
     "nuxt-responsive-loader": "^2.0.1",
